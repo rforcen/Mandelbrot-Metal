@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E06FCF4226B76B9009788B1 /* ColorScale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50E7226B305500C0EA22 /* ColorScale.cpp */; };
+		4E06FCF5226B76C8009788B1 /* ColorScale_metal.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50E1226B200500C0EA22 /* ColorScale_metal.metal */; };
 		4E3F50BC226B156000C0EA22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50BB226B156000C0EA22 /* AppDelegate.m */; };
 		4E3F50BF226B156000C0EA22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50BE226B156000C0EA22 /* ViewController.m */; };
 		4E3F50C1226B156100C0EA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3F50C0226B156100C0EA22 /* Assets.xcassets */; };
@@ -16,9 +18,7 @@
 		4E3F50D9226B1DB200C0EA22 /* MandelDisplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50D8226B1DB200C0EA22 /* MandelDisplay.mm */; };
 		4E3F50DF226B1DF000C0EA22 /* ImageBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50DB226B1DF000C0EA22 /* ImageBuffer.m */; };
 		4E3F50E0226B1DF000C0EA22 /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50DD226B1DF000C0EA22 /* ImageHelper.m */; };
-		4E3F50E2226B200500C0EA22 /* ColorScale_metal.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50E1226B200500C0EA22 /* ColorScale_metal.metal */; };
 		4E3F50E4226B2F8800C0EA22 /* Mandelbrot_metal.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50E3226B2F8800C0EA22 /* Mandelbrot_metal.metal */; };
-		4E3F50E8226B305500C0EA22 /* ColorScale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50E7226B305500C0EA22 /* ColorScale.cpp */; };
 		4E3F50F0226B33C600C0EA22 /* MetalDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E3F50EF226B33C600C0EA22 /* MetalDevice.mm */; };
 /* End PBXBuildFile section */
 
@@ -216,10 +216,10 @@
 				4E3F50E0226B1DF000C0EA22 /* ImageHelper.m in Sources */,
 				4E3F50F0226B33C600C0EA22 /* MetalDevice.mm in Sources */,
 				4E3F50BC226B156000C0EA22 /* AppDelegate.m in Sources */,
-				4E3F50E2226B200500C0EA22 /* ColorScale_metal.metal in Sources */,
+				4E06FCF5226B76C8009788B1 /* ColorScale_metal.metal in Sources */,
 				4E3F50DF226B1DF000C0EA22 /* ImageBuffer.m in Sources */,
 				4E3F50D9226B1DB200C0EA22 /* MandelDisplay.mm in Sources */,
-				4E3F50E8226B305500C0EA22 /* ColorScale.cpp in Sources */,
+				4E06FCF4226B76B9009788B1 /* ColorScale.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

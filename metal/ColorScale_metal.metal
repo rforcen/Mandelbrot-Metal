@@ -61,7 +61,7 @@ COLORREF ColorScaleHSL(	const COLORREF Col1,
  NOTE:		In general you want to pass Ratio1=1-Ratio2-Ratio3
  making sure that it stays between 0 and 1
  ******************************************************************************/
-extern COLORREF ColorScaleRGB3(const COLORREF Col1, const COLORREF Col2, const COLORREF Col3,
+ COLORREF ColorScaleRGB3(const COLORREF Col1, const COLORREF Col2, const COLORREF Col3,
                                float Ratio1, float Ratio2, float Ratio3) {
     int R1=(Col1>>16)&0xFF, G1=(Col1>>8)&0xFF, B1=Col1&0xFF;
     int R2=(Col2>>16)&0xFF, G2=(Col2>>8)&0xFF, B2=Col2&0xFF;
@@ -86,7 +86,7 @@ extern COLORREF ColorScaleRGB3(const COLORREF Col1, const COLORREF Col2, const C
  NOTE:		In general you want to pass Ratio1=1-Ratio2-Ratio3
  making sure that it stays between 0 and 1
  ******************************************************************************/
-extern COLORREF ColorScaleHSL3(const COLORREF Col1, const COLORREF Col2, const COLORREF Col3,
+ COLORREF ColorScaleHSL3(const COLORREF Col1, const COLORREF Col2, const COLORREF Col3,
                                float Ratio1, float Ratio2, float Ratio3) {
     float H1, H2, H3, S1, S2, S3, L1, L2, L3, SR;
     int rgb;
@@ -138,7 +138,7 @@ void RGBtoHLS(	const COLORREF rgb,
 }
 
 //*****************************************************************************
-static float HueToRGB(const float m1, const float m2, float h ) {
+ float HueToRGB(const float m1, const float m2, float h ) {
     if (h<0) h+=1.0;
     if (h>1) h-=1.0;
     if (6.0*h < 1  ) return (m1+(m2-m1)*h*6.0);

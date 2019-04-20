@@ -14,20 +14,23 @@
 @implementation MandelDisplay {
     Mandelbrot mandelbrot;
     MetalDevice*dev;
+    
     float4 range;
-    int iters;
+    int iterations;
+    float oversample;
 }
 
 -(void)awakeFromNib {
     dev = [MetalDevice init];
     
     range={-2.5, -2, 2, 2}; // {-1,-1,1,1}; //
-    iters=2048;
+    iterations=256*2; // per pixel
+    oversample=2; // generate a 'oversample x oversample' pixel size to gain resolution
 }
 
 -(void)generateCPU: (ImageBuffer*)ibuffMetal w:(int)w h:(int)h {
     mandelbrot.setRange(range);
-    mandelbrot.setIter(iters);
+    mandelbrot.setIter(iterations);
     mandelbrot.setSize(w, h);
     mandelbrot.generate();
     
@@ -35,24 +38,25 @@
 }
 
 -(void)generateMetal: (ImageBuffer*)imgBuff size:(int)size width:(int)width height:(int)height {
-    
     [dev compileFunc:@"Mandelbrot"];
     
     id<MTLBuffer>picBuff=[dev createBuffer:imgBuff.imgBuff length:size];
-    [dev setBufferParam: picBuff index:0]; // shader parameters:
-    [dev setBytesParam:&range        length:sizeof(range)     index:1];
-    [dev setBytesParam:&width        length:sizeof(width)     index:2];
-    [dev setBytesParam:&height       length:sizeof(height)    index:3];
-    [dev setBytesParam:&iters        length:sizeof(iters)     index:4];
+    [dev setBufferParam: picBuff index:0]; // shader parameters: picBuff, range(-x-y,x,y), w, h, iters
+    [dev setBytesParam:&range        length:sizeof(range)      index:1];
+    [dev setBytesParam:&width        length:sizeof(width)      index:2];
+    [dev setBytesParam:&height       length:sizeof(height)     index:3];
+    [dev setBytesParam:&iterations   length:sizeof(iterations) index:4];
     
-    [dev runThreadsWidth:width height:height];                // setup threads & run in a w x h grid
-    [dev copyContentsOn:imgBuff.imgBuff  buffer:picBuff];    // get result
+    [dev runThreadsWidth:width height:height];               // setup threads & run in a w x h grid
+    [dev copyContentsOn:imgBuff.imgBuff  buffer:picBuff];    // copy result
 }
 
 - (void)drawRect:(NSRect)rect {
     [super drawRect:rect];
     
-    uint w=rect.size.width, h=rect.size.height, size=w*h*sizeof(uint32);
+    // over sample 'mf'
+    uint w=oversample * rect.size.width,
+         h=oversample * rect.size.height, size=w*h*sizeof(uint32);
     
     ImageBuffer*ibuffMetal=[ImageBuffer initWithWidth:w Height:h];
     
@@ -67,7 +71,7 @@
     [[ibuffMetal getimage] drawInRect:rect];
     
     NSLog(@"image size: %dx%d, iterations: %d time CPU: %g, time GPU: %g, ration CPU/GPU: %g",
-          w,h, iters, tCPU, tGPU, tCPU/tGPU);
+          w,h, iterations, tCPU, tGPU, tCPU/tGPU);
 }
 
 @end

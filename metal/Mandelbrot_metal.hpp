@@ -62,7 +62,7 @@ public:
             }
         }
         
-        return 0xff000000 | ((inset) ? 0 : ColorScaleHSL(clBlue, clRed, 60.*col/iter) );
+        return 0xff000000 | ((inset) ? 0 : ColorScaleHSL(clBlue, clRed, 20. *col/iter) );
     }
 };
 #endif /* Mandelbrot_hpp */

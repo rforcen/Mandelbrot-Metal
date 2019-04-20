@@ -75,7 +75,7 @@ public:
                 }
                 
                 if (inset)     pic[i*width+j] = 0xff000000;
-                else           pic[i*width+j] = colIndex->getColorA(256. * color /iter);
+                else           pic[i*width+j] = colIndex->getColorA(20. * color /iter);
                 
                 x += xstep;
             }
