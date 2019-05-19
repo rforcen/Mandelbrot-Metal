@@ -52,6 +52,11 @@
 		4E3F50ED226B323800C0EA22 /* Mandelbrot_metal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mandelbrot_metal.hpp; sourceTree = "<group>"; };
 		4E3F50EE226B33C600C0EA22 /* MetalDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalDevice.h; sourceTree = "<group>"; };
 		4E3F50EF226B33C600C0EA22 /* MetalDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalDevice.mm; sourceTree = "<group>"; };
+		4E44C79322912BFF005EFF88 /* zSymbols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zSymbols.h; sourceTree = "<group>"; };
+		4E44C79422912C0C005EFF88 /* zVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zVM.h; sourceTree = "<group>"; };
+		4E44C79522912C16005EFF88 /* zCompiler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zCompiler.h; sourceTree = "<group>"; };
+		4EC1230A228FFCB700E9EEAC /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thread.h; sourceTree = "<group>"; };
+		4EC1230B228FFFA100E9EEAC /* complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = complex.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 		4E3F50B9226B156000C0EA22 /* Mandelbrot */ = {
 			isa = PBXGroup;
 			children = (
+				4E44C79522912C16005EFF88 /* zCompiler.h */,
 				4E3F50BA226B156000C0EA22 /* AppDelegate.h */,
 				4E3F50BB226B156000C0EA22 /* AppDelegate.m */,
 				4E3F50BD226B156000C0EA22 /* ViewController.h */,
@@ -118,11 +124,14 @@
 			children = (
 				4E3F50E3226B2F8800C0EA22 /* Mandelbrot_metal.metal */,
 				4E3F50ED226B323800C0EA22 /* Mandelbrot_metal.hpp */,
-				4E3F50D6226B1C9F00C0EA22 /* ColorScale_metal.h */,
 				4E3F50E1226B200500C0EA22 /* ColorScale_metal.metal */,
+				4E3F50D6226B1C9F00C0EA22 /* ColorScale_metal.h */,
 				4E3F50EC226B315300C0EA22 /* ColorIndex_metal.h */,
 				4E3F50EE226B33C600C0EA22 /* MetalDevice.h */,
 				4E3F50EF226B33C600C0EA22 /* MetalDevice.mm */,
+				4E44C79322912BFF005EFF88 /* zSymbols.h */,
+				4E44C79422912C0C005EFF88 /* zVM.h */,
+				4EC1230B228FFFA100E9EEAC /* complex.h */,
 			);
 			path = metal;
 			sourceTree = "<group>";
@@ -131,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				4E3F50CF226B157700C0EA22 /* Mandelbrot.hpp */,
+				4EC1230A228FFCB700E9EEAC /* Thread.h */,
 				4E3F50D5226B1C5E00C0EA22 /* ColorIndex.h */,
 				4E3F50D2226B1A9C00C0EA22 /* InterpolateColor.h */,
 				4E3F50D3226B1A9C00C0EA22 /* InterpolateColor.m */,

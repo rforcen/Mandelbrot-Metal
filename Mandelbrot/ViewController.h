@@ -7,9 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MandelDisplay.h"
 
 @interface ViewController : NSViewController
 
+@property (strong) IBOutlet MandelDisplay *mandelDisplay;
+@property (weak) IBOutlet NSTextField *formula;
 
 @end
 
